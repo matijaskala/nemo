@@ -402,7 +402,7 @@ nemo_icon_info_lookup (GIcon *icon,
                                                              (const char **)names,
                                                              size,
                                                              scale,
-                                                             0);
+                                                             GTK_ICON_LOOKUP_FORCE_SIZE);
 
 		if (gtkicon_info == NULL) {
 			return nemo_icon_info_new_for_pixbuf (NULL, scale);
@@ -439,7 +439,7 @@ nemo_icon_info_lookup (GIcon *icon,
                                                                           icon,
                                                                           size,
                                                                           scale,
-                                                                          0);
+                                                                          GTK_ICON_LOOKUP_FORCE_SIZE);
                 if (gtk_icon_info != NULL) {
                         pixbuf = gtk_icon_info_load_icon (gtk_icon_info, NULL);
                         g_object_unref (gtk_icon_info);
