@@ -6251,7 +6251,7 @@ nemo_icon_container_init (NemoIconContainer *container)
 
 	details->icon_set = g_hash_table_new (g_direct_hash, g_direct_equal);
 	details->layout_timestamp = UNDEFINED_TIME;
-	details->zoom_level = NEMO_ZOOM_LEVEL_STANDARD;
+	details->zoom_level = NEMO_ZOOM_LEVEL_LARGER;
 
 	details->font_size_table[NEMO_ZOOM_LEVEL_SMALLEST] = -2 * PANGO_SCALE;
 	details->font_size_table[NEMO_ZOOM_LEVEL_SMALLER] = -2 * PANGO_SCALE;
@@ -7529,7 +7529,7 @@ nemo_icon_container_set_zoom_level (NemoIconContainer *container, int new_level)
 	details->zoom_level = pinned_level;
 	
 	pixels_per_unit = (double) nemo_get_icon_size_for_zoom_level (pinned_level)
-		/ NEMO_ICON_SIZE_STANDARD;
+		/ NEMO_ICON_SIZE_LARGER;
 	eel_canvas_set_pixels_per_unit (EEL_CANVAS (container), pixels_per_unit);
 
 	invalidate_labels (container);
